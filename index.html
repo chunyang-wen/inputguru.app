@@ -135,42 +135,72 @@
           <p class="eyebrow">Snapshots</p>
           <h2 id="snapshots-title">The real settings surface.</h2>
         </div>
-        <div class="snapshot-grid">
-          <figure class="snapshot-card large">
-            <img src="assets/screenshots/shortcuts.png" alt="Shortcuts settings showing input source shortcut assignments and menu toggles.">
-            <figcaption>
-              <strong>Shortcuts</strong>
-              <span>Assign global keys and menu visibility per input source.</span>
-            </figcaption>
-          </figure>
-          <figure class="snapshot-card">
-            <img src="assets/screenshots/general.png" alt="General settings showing launch at login and menu bar icon options.">
-            <figcaption>
-              <strong>General</strong>
-              <span>Launch at login and menu bar behavior.</span>
-            </figcaption>
-          </figure>
-          <figure class="snapshot-card tall">
-            <img src="assets/screenshots/notifications.png" alt="Notifications settings showing position, duration, padding, and preview controls.">
-            <figcaption>
-              <strong>Notifications</strong>
-              <span>Cursor or corner feedback with adjustable timing.</span>
-            </figcaption>
-          </figure>
-          <figure class="snapshot-card">
-            <img src="assets/screenshots/behavior.png" alt="Behavior settings showing override timeout and activity window controls.">
-            <figcaption>
-              <strong>Behavior</strong>
-              <span>Configure override timeout and activity extension.</span>
-            </figcaption>
-          </figure>
-          <figure class="snapshot-card large">
-            <img src="assets/screenshots/applications.png" alt="Applications settings showing app-specific input source rules.">
-            <figcaption>
-              <strong>Applications</strong>
-              <span>Set app-specific defaults plus a global fallback.</span>
-            </figcaption>
-          </figure>
+        <div class="snapshot-carousel" data-carousel aria-roledescription="carousel" aria-label="InputGuru settings snapshots">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <figure class="snapshot-slide is-active">
+                <div class="snapshot-media">
+                  <img src="assets/screenshots/shortcuts.png" alt="Shortcuts settings showing input source shortcut assignments and menu toggles.">
+                </div>
+                <figcaption>
+                  <span>01</span>
+                  <strong>Shortcuts</strong>
+                  <p>Assign global keys and decide which input sources appear in the menu bar.</p>
+                </figcaption>
+              </figure>
+              <figure class="snapshot-slide">
+                <div class="snapshot-media">
+                  <img src="assets/screenshots/applications.png" alt="Applications settings showing app-specific input source rules.">
+                </div>
+                <figcaption>
+                  <span>02</span>
+                  <strong>Applications</strong>
+                  <p>Set app-specific defaults and an optional fallback for unconfigured apps.</p>
+                </figcaption>
+              </figure>
+              <figure class="snapshot-slide">
+                <div class="snapshot-media">
+                  <img src="assets/screenshots/general.png" alt="General settings showing launch at login and menu bar icon options.">
+                </div>
+                <figcaption>
+                  <span>03</span>
+                  <strong>General</strong>
+                  <p>Keep the utility available at login and control menu bar visibility.</p>
+                </figcaption>
+              </figure>
+              <figure class="snapshot-slide">
+                <div class="snapshot-media">
+                  <img src="assets/screenshots/behavior.png" alt="Behavior settings showing override timeout and activity window controls.">
+                </div>
+                <figcaption>
+                  <span>04</span>
+                  <strong>Behavior</strong>
+                  <p>Tune override timeout and the activity window that extends active work.</p>
+                </figcaption>
+              </figure>
+              <figure class="snapshot-slide">
+                <div class="snapshot-media">
+                  <img src="assets/screenshots/notifications.png" alt="Notifications settings showing position, duration, padding, and preview controls.">
+                </div>
+                <figcaption>
+                  <span>05</span>
+                  <strong>Notifications</strong>
+                  <p>Place lightweight feedback near the cursor or in a screen corner.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="carousel-controls" aria-label="Snapshot controls">
+            <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Previous snapshot">‹</button>
+            <div class="carousel-dots" role="tablist" aria-label="Choose snapshot">
+              <button class="is-active" type="button" data-carousel-dot="0" aria-label="Show Shortcuts snapshot"></button>
+              <button type="button" data-carousel-dot="1" aria-label="Show Applications snapshot"></button>
+              <button type="button" data-carousel-dot="2" aria-label="Show General snapshot"></button>
+              <button type="button" data-carousel-dot="3" aria-label="Show Behavior snapshot"></button>
+              <button type="button" data-carousel-dot="4" aria-label="Show Notifications snapshot"></button>
+            </div>
+            <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next snapshot">›</button>
+          </div>
         </div>
       </section>
 
