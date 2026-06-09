@@ -438,17 +438,24 @@ p {
 
 .carousel-viewport {
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: visible;
   padding: 16px 0 28px;
   mask-image: linear-gradient(90deg, transparent, black 9%, black 91%, transparent);
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
 }
 
 .carousel-track {
   display: flex;
   align-items: center;
   gap: clamp(18px, 3vw, 34px);
-  transition: transform 760ms cubic-bezier(0.19, 1, 0.22, 1);
-  will-change: transform;
+  padding-inline: max(24px, calc((100% - min(920px, 74vw)) / 2));
 }
 
 .snapshot-slide {
@@ -457,6 +464,7 @@ p {
   margin: 0;
   opacity: 0.38;
   transform: scale(0.9);
+  scroll-snap-align: center;
   transition: opacity 520ms ease, transform 760ms cubic-bezier(0.19, 1, 0.22, 1), filter 520ms ease;
   filter: saturate(0.72);
 }
@@ -785,13 +793,15 @@ p {
   }
 
   .carousel-viewport {
-    overflow: visible;
+    overflow-x: auto;
+    overflow-y: visible;
     padding-top: 0;
     mask-image: none;
   }
 
   .carousel-track {
     gap: 16px;
+    padding-inline: 18px;
   }
 
   .snapshot-slide {

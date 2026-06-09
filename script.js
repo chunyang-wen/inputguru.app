@@ -45,8 +45,11 @@ if (carousel) {
     });
 
     const activeSlide = slides[activeIndex];
-    const offset = viewport.clientWidth / 2 - (activeSlide.offsetLeft + activeSlide.offsetWidth / 2);
-    track.style.transform = `translateX(${offset}px)`;
+    const left = activeSlide.offsetLeft - (viewport.clientWidth - activeSlide.offsetWidth) / 2;
+    viewport.scrollTo({
+      left,
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    });
   };
 
   const stopAutoAdvance = () => {
@@ -82,7 +85,10 @@ if (carousel) {
   carousel.addEventListener("focusin", stopAutoAdvance);
   carousel.addEventListener("focusout", startAutoAdvance);
   window.addEventListener("resize", () => centerSlide(activeIndex));
+  window.addEventListener("load", () => centerSlide(activeIndex));
 
-  centerSlide(0);
-  startAutoAdvance();
+  requestAnimationFrame(() => {
+    centerSlide(0);
+    startAutoAdvance();
+  });
 }
