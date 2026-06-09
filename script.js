@@ -44,11 +44,10 @@ if (carousel) {
       dot.setAttribute("aria-selected", String(dotIndex === activeIndex));
     });
 
-    const activeSlide = slides[activeIndex];
-    const left = activeSlide.offsetLeft - (viewport.clientWidth - activeSlide.offsetWidth) / 2;
-    viewport.scrollTo({
-      left,
+    slides[activeIndex].scrollIntoView({
       behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+      block: "nearest",
+      inline: "center"
     });
   };
 
