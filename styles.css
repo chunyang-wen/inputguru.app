@@ -601,7 +601,7 @@ p {
 }
 
 .carousel-dots button.is-active::after {
-  animation: dotProgress 5200ms linear both;
+  animation: dotProgress 2000ms linear both;
 }
 
 .workflow {

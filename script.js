@@ -44,10 +44,11 @@ if (carousel) {
       dot.setAttribute("aria-selected", String(dotIndex === activeIndex));
     });
 
-    slides[activeIndex].scrollIntoView({
+    const activeSlide = slides[activeIndex];
+    const left = activeSlide.offsetLeft - (viewport.clientWidth - activeSlide.offsetWidth) / 2;
+    viewport.scrollTo({
+      left,
       behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-      block: "nearest",
-      inline: "center"
     });
   };
 
@@ -58,7 +59,7 @@ if (carousel) {
   const startAutoAdvance = () => {
     stopAutoAdvance();
     if (!prefersReducedMotion.matches) {
-      timer = window.setInterval(() => centerSlide(activeIndex + 1), 5200);
+      timer = window.setInterval(() => centerSlide(activeIndex + 1), 2000);
     }
   };
 
