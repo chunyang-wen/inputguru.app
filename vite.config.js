@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // Since it's deployed to GitHub Pages root (or custom domain), base '/' is usually fine.
-  base: '/',
+  // Set the base path to the repository name for GitHub Pages
+  base: '/inputguru.app/',
   build: {
     outDir: 'dist'
   }
