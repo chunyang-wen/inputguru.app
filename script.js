@@ -30,10 +30,17 @@ if (carousel) {
   const next = carousel.querySelector("[data-carousel-next]");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let activeIndex = 0;
+  let direction = 1;
   let timer;
 
-  const centerSlide = (index) => {
-    activeIndex = (index + slides.length) % slides.length;
+  const updateControls = () => {
+    previous.disabled = activeIndex === 0;
+    next.disabled = activeIndex === slides.length - 1;
+  };
+
+  const centerSlide = (index, options = {}) => {
+    const shouldAnimate = options.animate !== false && !prefersReducedMotion.matches;
+    activeIndex = Math.max(0, Math.min(index, slides.length - 1));
 
     slides.forEach((slide, slideIndex) => {
       slide.classList.toggle("is-active", slideIndex === activeIndex);
@@ -46,10 +53,10 @@ if (carousel) {
 
     const activeSlide = slides[activeIndex];
     const left = activeSlide.offsetLeft - (viewport.clientWidth - activeSlide.offsetWidth) / 2;
-    viewport.scrollTo({
-      left,
-      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-    });
+
+    track.classList.toggle("is-moving", shouldAnimate);
+    track.style.transform = `translate3d(${-left}px, 0, 0)`;
+    updateControls();
   };
 
   const stopAutoAdvance = () => {
@@ -59,7 +66,15 @@ if (carousel) {
   const startAutoAdvance = () => {
     stopAutoAdvance();
     if (!prefersReducedMotion.matches) {
-      timer = window.setInterval(() => centerSlide(activeIndex + 1), 2000);
+      timer = window.setInterval(() => {
+        if (activeIndex === slides.length - 1) {
+          direction = -1;
+        } else if (activeIndex === 0) {
+          direction = 1;
+        }
+
+        centerSlide(activeIndex + direction);
+      }, 2600);
     }
   };
 
@@ -84,11 +99,11 @@ if (carousel) {
   carousel.addEventListener("mouseleave", startAutoAdvance);
   carousel.addEventListener("focusin", stopAutoAdvance);
   carousel.addEventListener("focusout", startAutoAdvance);
-  window.addEventListener("resize", () => centerSlide(activeIndex));
-  window.addEventListener("load", () => centerSlide(activeIndex));
+  window.addEventListener("resize", () => centerSlide(activeIndex, { animate: false }));
+  window.addEventListener("load", () => centerSlide(activeIndex, { animate: false }));
 
   requestAnimationFrame(() => {
-    centerSlide(0);
+    centerSlide(0, { animate: false });
     startAutoAdvance();
   });
 }
