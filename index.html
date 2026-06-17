@@ -6,7 +6,7 @@
     <title>InputGuru - Keyboard input sources that stay where you expect</title>
     <meta
       name="description"
-      content="InputGuru is a macOS menu bar utility for predictable keyboard input sources, per-app defaults, shortcuts, temporary overrides, and lightweight change notifications."
+      content="InputGuru is a macOS menu bar utility for predictable keyboard input sources across apps, browser websites, shortcuts, temporary overrides, backups, and lightweight change notifications."
     >
     <meta property="og:title" content="InputGuru">
     <meta property="og:description" content="Predictable keyboard input sources for multilingual Mac workflows.">
@@ -27,6 +27,7 @@
         <a href="#features">Features</a>
         <a href="#snapshots">Snapshots</a>
         <a href="#workflow">Workflow</a>
+        <a href="#control">Control</a>
         <a href="https://x.com/ChunyangWen" target="_blank" rel="noreferrer" style="display: flex; align-items: center; gap: 4px;">𝕏 @ChunyangWen</a>
         <a href="#buy" class="nav-cta">Get InputGuru</a>
       </nav>
@@ -38,8 +39,8 @@
           <p class="eyebrow">macOS menu bar utility</p>
           <h1 id="hero-title">InputGuru</h1>
           <p class="hero-lede">
-            Keyboard input sources that follow the app you are using, without
-            interrupting the work in front of you.
+            Keyboard input sources that follow the app and website you are using,
+            without interrupting the work in front of you.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="#buy">Get InputGuru</a>
@@ -52,11 +53,11 @@
             </div>
             <div>
               <dt>Focus</dt>
-              <dd>Per-app input</dd>
+              <dd>Apps + websites</dd>
             </div>
             <div>
-              <dt>Workflow</dt>
-              <dd>Shortcuts + overrides</dd>
+              <dt>Control</dt>
+              <dd>Pause + backup</dd>
             </div>
           </dl>
         </div>
@@ -78,6 +79,10 @@
             <span>あ</span>
             <strong>Temporary override</strong>
           </div>
+          <div class="floating-token token-c">
+            <span>⌘</span>
+            <strong>Website rule</strong>
+          </div>
         </div>
       </section>
 
@@ -86,9 +91,9 @@
         <h2 id="problem-title">Stop checking the input menu before every sentence.</h2>
         <p>
           InputGuru keeps Xcode, browsers, terminals, editors, notes, and chat apps
-          on the keyboard input source each one needs. When you switch manually,
-          it respects that choice for a configurable window, then quietly returns
-          to your rules.
+          on the keyboard input source each one needs. Browsers can go further with
+          website-specific rules, so work sites, docs, chat, and writing tools can
+          each get the input source you expect.
         </p>
       </section>
 
@@ -105,26 +110,41 @@
           </article>
           <article>
             <span class="feature-mark">02</span>
+            <h3>Website rules</h3>
+            <p>Match active browser URLs or domains in Safari, Chrome, Edge, Brave, Arc, and Vivaldi, then switch to the right input source for that site.</p>
+          </article>
+          <article>
+            <span class="feature-mark">03</span>
             <h3>Manual overrides</h3>
             <p>Switch from the menu bar or a global shortcut and preserve the choice for a configurable timeout.</p>
           </article>
           <article>
-            <span class="feature-mark">03</span>
+            <span class="feature-mark">04</span>
             <h3>Activity-aware timing</h3>
             <p>Typing near the end of an override window can extend it, so active writing is not cut off by automation.</p>
           </article>
           <article>
-            <span class="feature-mark">04</span>
+            <span class="feature-mark">05</span>
             <h3>Shortcut assignments</h3>
             <p>Map the input sources you use most to global shortcuts and choose which ones appear in the menu.</p>
           </article>
           <article>
-            <span class="feature-mark">05</span>
+            <span class="feature-mark">06</span>
+            <h3>Pause when needed</h3>
+            <p>Pause automatic app and website switching from the menu bar or General settings while keeping manual switching available.</p>
+          </article>
+          <article>
+            <span class="feature-mark">07</span>
             <h3>Clean menu bar control</h3>
             <p>Keep the menu short by exposing only selected sources, while still seeing current source and override status.</p>
           </article>
           <article>
-            <span class="feature-mark">06</span>
+            <span class="feature-mark">08</span>
+            <h3>Configuration backup</h3>
+            <p>Export and restore app rules, website rules, fallback source, shortcuts, behavior, notification settings, and retention settings.</p>
+          </article>
+          <article>
+            <span class="feature-mark">09</span>
             <h3>Visual feedback</h3>
             <p>Show lightweight change notifications near the cursor or in a screen corner, with duration and padding controls.</p>
           </article>
@@ -156,7 +176,17 @@
                 <figcaption>
                   <span>02</span>
                   <strong>Applications</strong>
-                  <p>Set app-specific defaults and an optional fallback for unconfigured apps.</p>
+                  <p>Set app-specific defaults, import or export configuration backups, and choose an optional fallback.</p>
+                </figcaption>
+              </figure>
+              <figure class="snapshot-slide">
+                <div class="snapshot-media">
+                  <img src="assets/screenshots/websites.png" alt="Websites settings showing browser URL rules mapped to input sources.">
+                </div>
+                <figcaption>
+                  <span>03</span>
+                  <strong>Websites</strong>
+                  <p>Map URL or domain patterns to input sources for supported browsers.</p>
                 </figcaption>
               </figure>
               <figure class="snapshot-slide">
@@ -164,9 +194,9 @@
                   <img src="assets/screenshots/general.png" alt="General settings showing launch at login and menu bar icon options.">
                 </div>
                 <figcaption>
-                  <span>03</span>
+                  <span>04</span>
                   <strong>General</strong>
-                  <p>Keep the utility available at login and control menu bar visibility.</p>
+                  <p>Keep the utility available at login, pause automatic switching, and control menu bar visibility.</p>
                 </figcaption>
               </figure>
               <figure class="snapshot-slide">
@@ -174,7 +204,7 @@
                   <img src="assets/screenshots/behavior.png" alt="Behavior settings showing override timeout and activity window controls.">
                 </div>
                 <figcaption>
-                  <span>04</span>
+                  <span>05</span>
                   <strong>Behavior</strong>
                   <p>Tune override timeout and the activity window that extends active work.</p>
                 </figcaption>
@@ -184,7 +214,7 @@
                   <img src="assets/screenshots/notifications.png" alt="Notifications settings showing position, duration, padding, and preview controls.">
                 </div>
                 <figcaption>
-                  <span>05</span>
+                  <span>06</span>
                   <strong>Notifications</strong>
                   <p>Place lightweight feedback near the cursor or in a screen corner.</p>
                 </figcaption>
@@ -196,12 +226,34 @@
             <div class="carousel-dots" role="tablist" aria-label="Choose snapshot">
               <button class="is-active" type="button" data-carousel-dot="0" aria-label="Show Shortcuts snapshot"></button>
               <button type="button" data-carousel-dot="1" aria-label="Show Applications snapshot"></button>
-              <button type="button" data-carousel-dot="2" aria-label="Show General snapshot"></button>
-              <button type="button" data-carousel-dot="3" aria-label="Show Behavior snapshot"></button>
-              <button type="button" data-carousel-dot="4" aria-label="Show Notifications snapshot"></button>
+              <button type="button" data-carousel-dot="2" aria-label="Show Websites snapshot"></button>
+              <button type="button" data-carousel-dot="3" aria-label="Show General snapshot"></button>
+              <button type="button" data-carousel-dot="4" aria-label="Show Behavior snapshot"></button>
+              <button type="button" data-carousel-dot="5" aria-label="Show Notifications snapshot"></button>
             </div>
             <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next snapshot">›</button>
           </div>
+        </div>
+      </section>
+
+      <section class="control" id="control" aria-labelledby="control-title">
+        <div class="section-kicker">
+          <p class="eyebrow">Control layer</p>
+          <h2 id="control-title">Rules for everyday work, escape hatches for edge cases.</h2>
+        </div>
+        <div class="control-grid">
+          <article>
+            <span>Website matching</span>
+            <p>Set patterns such as <code>github.com</code>, <code>docs.example.com</code>, or a longer URL path. The most specific matching rule wins while a supported browser is active.</p>
+          </article>
+          <article>
+            <span>Pause automation</span>
+            <p>Temporarily stop automatic app and website switching when you are presenting, testing, pairing, or doing one-off work in an unusual language context.</p>
+          </article>
+          <article>
+            <span>Portable setup</span>
+            <p>Move your configuration between Macs or recover quickly after a clean install with a readable JSON backup.</p>
+          </article>
         </div>
       </section>
 
@@ -212,16 +264,16 @@
         </div>
         <ol class="workflow-list">
           <li>
-            <span>Set defaults</span>
-            <p>Choose the default input source for each app and an optional fallback for unconfigured apps.</p>
+            <span>Set rules</span>
+            <p>Choose defaults for each app, add website-specific browser rules, and set an optional fallback.</p>
           </li>
           <li>
             <span>Switch manually</span>
             <p>Use a shortcut or the menu bar when your current task needs a different source.</p>
           </li>
           <li>
-            <span>Return automatically</span>
-            <p>After the override window, InputGuru resumes the expected per-app behavior.</p>
+            <span>Stay in control</span>
+            <p>After the override window, InputGuru resumes your rules. Pause automation any time the context is unusual.</p>
           </li>
         </ol>
       </section>
@@ -234,7 +286,7 @@
             <h2 id="buy-title">InputGuru for macOS</h2>
             <p>
               A focused utility for people who move between languages, editors,
-              browsers, terminals, and chat all day.
+              browsers, terminals, docs, and chat all day.
             </p>
           </div>
           <span class="button primary disabled" aria-disabled="true">Sales link coming soon</span>

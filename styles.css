@@ -347,9 +347,15 @@ p {
   top: -24px;
 }
 
+.token-c {
+  right: -16px;
+  bottom: 18%;
+}
+
 .problem-band,
 .features,
 .snapshots,
+.control,
 .workflow,
 .buy {
   padding: clamp(72px, 9vw, 132px) clamp(18px, 5vw, 72px);
@@ -616,6 +622,48 @@ p {
   animation: dotProgress 2000ms linear both;
 }
 
+.control {
+  border-top: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(141, 170, 255, 0.09), transparent 44%),
+    rgba(15, 20, 18, 0.72);
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.control-grid article {
+  min-height: 210px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(22px, 3vw, 32px);
+  background: rgba(248, 239, 225, 0.045);
+}
+
+.control-grid span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.control-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.control-grid code {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 5px;
+  color: var(--mint);
+  background: rgba(0, 0, 0, 0.22);
+}
+
 .workflow {
   display: grid;
   grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
@@ -778,6 +826,10 @@ p {
 
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .control-grid {
+    grid-template-columns: 1fr;
   }
 
   .buy-panel {
