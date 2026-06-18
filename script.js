@@ -1,4 +1,19 @@
 const revealTargets = document.querySelectorAll(".feature-grid article, .workflow-list li");
+const params = new URLSearchParams(window.location.search);
+const purchaseSuccess = document.querySelector("[data-purchase-success]");
+const licenseWrapper = document.querySelector("[data-license-wrapper]");
+const licenseKey = document.querySelector("[data-license-key]");
+
+if (params.get("purchase") === "success" && purchaseSuccess) {
+  purchaseSuccess.hidden = false;
+  document.querySelector("#buy")?.scrollIntoView({ block: "start" });
+
+  const key = params.get("license_key");
+  if (key && licenseWrapper && licenseKey) {
+    licenseKey.textContent = key;
+    licenseWrapper.hidden = false;
+  }
+}
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
